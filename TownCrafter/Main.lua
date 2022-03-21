@@ -77,14 +77,7 @@ function GetItemFromChest(itemName,toSlot,amount)
                 end
             else 
                 rc.pushItems("top",slot,amount)
-                turtle.select(toSlot)
-                sleep(0.5)
-                redstone.setOutput("top",true)
-                sleep(0.5)
-                redstone.setOutput("top",false)
-                sleep(0.1)
-                turtle.select(1)
-                sleep(0.01)
+                turtle.suckUp()
                 return true
             end
         end
