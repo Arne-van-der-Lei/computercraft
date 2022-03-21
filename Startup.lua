@@ -5,6 +5,9 @@ function download(url, file)
     if not content then
       error("Could not connect to website")
     end
+    if fs.exists(file) == true then
+        fs.delete(file)
+    end
     f = fs.open(file, "w")
     f.write(content)
     f.close()
