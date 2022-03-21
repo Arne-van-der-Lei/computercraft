@@ -7,7 +7,7 @@ if integrator == nil then error("colonyIntegrator not found") end
 if not integrator.isInColony then error("Block is not in a colony") end
 
 print("Colony name:".. integrator.getColonyName())
-print("Currently under attack?".. integrator.isUnderAttack())
+print("Currently under attack?".. tostring(integrator.isUnderAttack()))
 for k, v in ipairs(integrator.getCitizens()) do
   print(v.name) -- Prints the name of every colonist in the colony
 end
