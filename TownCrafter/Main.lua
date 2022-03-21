@@ -1,6 +1,7 @@
 local integrator = peripheral.find("colonyIntegrator") -- Finds the peripheral if one is connected
 local fc = peripheral.wrap("front")
 local rc = peripheral.wrap("right")
+local modem = peripheral.wrap("front")
 local resepys = require("Recepies")
 
 function PrintTable(table)
@@ -74,7 +75,7 @@ function GetItemFromChest(itemName,toSlot,amount)
                     return true
                 end
             else 
-                rc.pushItems("left",slot,amount,toSlot)
+                rc.pushItems(modem.getNameLocal(),slot,amount,toSlot)
                 return true
             end
         end
