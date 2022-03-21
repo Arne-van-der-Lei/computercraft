@@ -80,10 +80,11 @@ function GetItemFromChest(itemName,toSlot,amount)
                 turtle.select(toSlot)
                 sleep(0.1)
                 redstone.setOutput("top",true)
+                sleep(0.1)
+                redstone.setOutput("top",false)
                 sleep(0.5)
                 turtle.select(1)
                 sleep(0.01)
-                redstone.setOutput("top",false)
                 return true
             end
         end
