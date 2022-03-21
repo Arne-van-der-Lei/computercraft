@@ -24,7 +24,5 @@ end
 
 for k, v in ipairs(integrator.getWorkOrders()) do
     print("Work order: " .. v.id)
-    for index, item in ipairs(integrator.getWorkOrderResources(v.id)) do
-        print(("%i %d x %s"):format(index, item.count, item.name))
-    end
+    PrintTable(integrator.getWorkOrderResources(v.id))
 end
