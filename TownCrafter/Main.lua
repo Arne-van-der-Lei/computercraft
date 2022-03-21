@@ -4,9 +4,7 @@ local rc = peripheral.wrap("right")
 
 function PrintTable(table)
     for i,v in pairs(table) do
-        if type(v) == "function" then
-            print(i,v,debug.getinfo(v))
-        end
+        print(i,v)
     end
 end
 
