@@ -4,7 +4,12 @@ local rc = peripheral.wrap("right")
 
 function PrintTable(table)
     for i,v in pairs(table) do
-        print(i.." = "..v)
+        if type(v) == "table" then
+            print(i .. ":")
+            PrintTable(v)
+        else
+            print(i.." = "..v)
+        end
     end
 end
 
