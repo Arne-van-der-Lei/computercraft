@@ -74,7 +74,7 @@ function GetItemFromChest(itemName,toSlot,amount)
                     return true
                 end
             else 
-                rc.pushItems("right",slot,amount,toSlot)
+                rc.pushItems("left",slot,amount,toSlot)
                 return true
             end
         end
