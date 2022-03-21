@@ -23,7 +23,7 @@ function Craft(item, amount)
         return
     end
 
-    Craft(item,amount)
+    CraftItem(item,amount)
 end
 
 function CraftItem(item,amount,right)
@@ -41,7 +41,7 @@ function CraftItem(item,amount,right)
                 item = recepie.blocks[c]
                 if GetItemFromChest(item,(i-1)*4+j,1) == false then
                     ClearInventory()
-                    Craft(item,1,true)
+                    CraftItem(item,1,true)
                     return
                 end
             end
