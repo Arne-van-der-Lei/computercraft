@@ -71,5 +71,34 @@ return {
             ["l"]="minecraft:spruce_log",
         },
         output = 1
-    }
+    },
+    ["minecraft:white_bed"] = {
+        layout = {"   ","www","ppp"},
+        blocks = {
+            ["w"]="minecraft:white_wool",
+            ["p"]="minecraft:spruce_planks"
+        },
+        output = 1
+    },
+    ["minecraft:chest"] = {
+        layout = {"ppp","p p","ppp"},
+        blocks = {
+            ["p"]="minecraft:oak_planks"
+        },
+        output = 1
+    },
+    ["minecraft:cobblestone_wall"] = {
+        layout = {"   ","ccc","ccc"},
+        blocks = {
+            ["c"]="minecraft:cobblestone"
+        },
+        output = 1
+    },
+    ["minecraft:glass_pane"] = {
+        layout = {"   ","ppp","ppp"},
+        blocks = {
+            ["p"]="minecraft:glass"
+        },
+        output = 16
+    },
 }
