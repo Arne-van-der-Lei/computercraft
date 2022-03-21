@@ -35,7 +35,7 @@ for k, v in ipairs(integrator.getWorkOrders()) do
     print("Work order: " .. v.id)
 
     for index, item in ipairs(integrator.getWorkOrderResources(v.id)) do
-        if item.status == "NEEDED" then
+        if item.needed - item.available > 0 then
             craft(item.item,item.needed - item.available)
         end
     end
