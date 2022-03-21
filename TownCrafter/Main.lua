@@ -17,5 +17,8 @@ for slot, item in pairs(rc.list()) do
 end
 
 for k, v in ipairs(integrator.getWorkOrders()) do
-    print(k .. " " .. v)
+    print("Work order: " .. k)
+    for index, item in ipairs(integrator.getWorkOrderResources(k)) do
+        print(("%i %d x %s"):format(index, item.count, item.name))
+    end
 end
