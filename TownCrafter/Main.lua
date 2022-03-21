@@ -17,9 +17,6 @@ function PrintTable(table)
     end
 end
 
-PrintTable(modem.getNamesRemote())
-
-
 function Craft(item, amount)
     print(item .. " - " .. amount)
 
@@ -80,7 +77,7 @@ function GetItemFromChest(itemName,toSlot,amount)
                     return true
                 end
             else 
-                rc.pushItems(modem.getName(),slot,amount,toSlot)
+                rc.pushItems("turtle_0",slot,amount,toSlot)
                 return true
             end
         end
