@@ -59,7 +59,7 @@ for k, v in ipairs(integrator.getWorkOrders()) do
 
     for index, item in ipairs(integrator.getWorkOrderResources(v.id)) do
         if item.needed - item.available > 0 then
-            craft(item.item,item.needed - item.available)
+            Craft(item.item,item.needed - item.available)
         end
     end
 end
