@@ -216,4 +216,11 @@ return {
         },
         output = 1
     },
+    ["minecraft:spruce_door"] = {
+        layout = {" pp"," pp"," pp"},
+        blocks = {
+            ["p"]="minecraft:spruce_planks"
+        },
+        output = 3
+    },
 }
