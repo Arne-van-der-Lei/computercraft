@@ -106,3 +106,8 @@ for k, v in ipairs(integrator.getWorkOrders()) do
         end
     end
 end
+
+for k, v in ipairs(integrator.getRequests()) do
+    print("request " .. k)
+    PrintTable(v)
+end
