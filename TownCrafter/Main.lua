@@ -77,7 +77,9 @@ function GetItemFromChest(itemName,toSlot,amount)
                 end
             else 
                 rc.pushItems("top",slot,amount)
+                turtle.select(toSlot)
                 turtle.suckUp()
+                turtle.select(1)
                 return true
             end
         end
