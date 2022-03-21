@@ -37,7 +37,7 @@ function CraftItem(item,amount,right)
     while amount > 0 do
         for i = 1, 3, 1 do
             for j = 1, #recepie.layout[i] do
-                local c = str:sub(j,j)
+                local c = recepie.layout[i]:sub(j,j)
                 item = recepie.blocks[c]
                 if GetItemFromChest(item,(i-1)*4+j,1) == false then
                     ClearInventory()
@@ -105,9 +105,4 @@ for k, v in ipairs(integrator.getWorkOrders()) do
             Craft(item.item,item.needed - item.available)
         end
     end
-end
-
-for k, v in ipairs(integrator.getRequests()) do
-    print("request " .. k)
-    PrintTable(v)
 end
