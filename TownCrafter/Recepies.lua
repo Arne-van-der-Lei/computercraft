@@ -41,5 +41,35 @@ return {
             ["s"] = "minecraft:stick"
         },
         output = 4
+    },
+    ["minecraft:spruce_trapdoor"] = {
+        layout={"   ","ccc","ccc"},
+        blocks={
+            ["c"] = "minecraft:spruce_planks",
+        },
+        output = 2
+    },
+    ["minecraft:furnace"] = {
+        layout={"ccc","c c","ccc"},
+        blocks={
+            ["c"] = "minecraft:cobblestone",
+        },
+        output = 1
+    },
+    ["minecraft:crafting_table"] = {
+        layout = {"ww ","ww ","   "},
+        blocks = {
+            ["w"]="minecraft:spruce_planks"
+        },
+        output = 1
+    },
+    ["minecraft:campfire"] = {
+        layout = {" s ","scs","lll"},
+        blocks = {
+            ["s"]="minecraft:stick",
+            ["c"]="minecraft:coal",
+            ["l"]="minecraft:spruce_log",
+        },
+        output = 1
     }
 }
