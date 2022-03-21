@@ -25,7 +25,7 @@ function Craft(item, amount)
 
     recepie = GetRecepieForItem(item)
 
-    if resepys == nil then
+    if recepie == nil then
         print("recipie for " .. item .. " does not exist")
         return
     end
