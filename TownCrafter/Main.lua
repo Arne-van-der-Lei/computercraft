@@ -4,6 +4,8 @@ local rc = peripheral.wrap("right")
 local modem = peripheral.wrap("top")
 local resepys = require("Recepies")
 
+
+
 function PrintTable(table)
     for i,v in pairs(table) do
         if type(v) == "table" then
@@ -14,6 +16,9 @@ function PrintTable(table)
         end
     end
 end
+
+PrintTable(peripheral.getNames())
+
 
 function Craft(item, amount)
     print(item .. " - " .. amount)
@@ -75,7 +80,7 @@ function GetItemFromChest(itemName,toSlot,amount)
                     return true
                 end
             else 
-                rc.pushItems(modem.getNameLocal(),slot,amount,toSlot)
+                rc.pushItems(modem.getName(),slot,amount,toSlot)
                 return true
             end
         end
