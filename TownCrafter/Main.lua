@@ -4,7 +4,7 @@ local rc = peripheral.wrap("right")
 
 function PrintTable(table)
     for i,v in pairs(table) do
-        print(i,v)
+        print(i.." = "..v)
     end
 end
 
@@ -25,7 +25,7 @@ end
 for k, v in ipairs(integrator.getWorkOrders()) do
     print("Work order: " .. k)
     PrintTable(v)
-    for index, item in ipairs(integrator.getWorkOrderResources(k)) do
+    for index, item in ipairs(integrator.getWorkOrderResources(v.id)) do
         print(("%i %d x %s"):format(index, item.count, item.name))
     end
 end
