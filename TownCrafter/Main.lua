@@ -1,6 +1,7 @@
 local integrator = peripheral.find("colonyIntegrator") -- Finds the peripheral if one is connected
 local fc = peripheral.wrap("front")
 local rc = peripheral.wrap("right")
+local resepys = require("Recepies")
 
 function PrintTable(table)
     for i,v in pairs(table) do
@@ -13,23 +14,45 @@ function PrintTable(table)
     end
 end
 
-function craft(item, amount)
+function Craft(item, amount)
     print(item .. " - " .. amount)
+
+    hasItem = GetItemFromChest(item,-1,amount)
+
+    if hasItem then 
+        return
+    end
+
+    recepie = GetRecepieForItem(item)
+
+    if resepys == nil then
+        print("recipie for " .. item .. " does not exist")
+        return
+    end
 end
+
+function GetItemFromChest(item,toSlot,amount)
+    for slot, item in pairs(rc.list()) do
+        if item.name == item then
+            if toSlot == -1 then
+                rc.pushItems(peripheral.getName(fc),slot,amount)
+                return true
+            else 
+
+            end
+        end
+    end
+    return false
+end
+
+function GetRecepieForItem(item)
+    return resepys[item]
+end
+
 
 if integrator == nil then error("colonyIntegrator not found") end
 
 if not integrator.isInColony then error("Block is not in a colony") end
-
-print("Colony name:".. integrator.getColonyName())
-print("Currently under attack?".. tostring(integrator.isUnderAttack()))
-for k, v in ipairs(integrator.getCitizens()) do
-  print(v.name) -- Prints the name of every colonist in the colony
-end
-
-for slot, item in pairs(rc.list()) do
-  print(("%d x %s in slot %d"):format(item.count, item.name, slot))
-end
 
 for k, v in ipairs(integrator.getWorkOrders()) do
     print("Work order: " .. v.id)
