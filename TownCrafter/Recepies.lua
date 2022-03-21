@@ -188,4 +188,11 @@ return {
         },
         output = 4
     },
+    ["minecraft:oak_trapdoor"] = {
+        layout = {"   ","ppp","ppp"},
+        blocks = {
+            ["p"]="minecraft:oak_planks"
+        },
+        output = 2
+    },
 }
