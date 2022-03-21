@@ -1,7 +1,6 @@
 local integrator = peripheral.find("colonyIntegrator") -- Finds the peripheral if one is connected
 local fc = peripheral.wrap("front")
 local rc = peripheral.wrap("right")
-local modem = peripheral.wrap("top")
 local resepys = require("Recepies")
 
 
@@ -77,7 +76,7 @@ function GetItemFromChest(itemName,toSlot,amount)
                     return true
                 end
             else 
-                rc.pushItems("top",slot,amount,0)
+                rc.pushItems("top",slot,amount)
                 turtle.select(toSlot)
                 redstone.setOutput("top",true)
                 turtle.select(0)
