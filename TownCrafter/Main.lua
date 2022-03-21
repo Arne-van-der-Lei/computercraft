@@ -31,12 +31,14 @@ function Craft(item, amount)
     -- end
 end
 
-function GetItemFromChest(item,toSlot,amount)
+function GetItemFromChest(itemName,toSlot,amount)
     for slot, item in pairs(rc.list()) do
-        if item.name == item then
+        if item.name == itemName then
             if toSlot == -1 then
-                rc.pushItems(peripheral.getName(fc),slot,amount)
-                return true
+                amount = amount - rc.pushItems(peripheral.getName(fc),slot,amount)
+                if amount <= 0 then
+                    return true
+                end
             else 
                 return false
             end
