@@ -3,8 +3,6 @@ local fc = peripheral.wrap("front")
 local rc = peripheral.wrap("right")
 local resepys = require("Recepies")
 
-
-
 function PrintTable(table)
     for i,v in pairs(table) do
         if type(v) == "table" then
@@ -36,6 +34,7 @@ function CraftItem(item,amount,right)
         print("recipie for " .. item .. " does not exist")
         return
     end
+
     while amount > 0 do
         for i = 1, 3, 1 do
             for j = 1, #recepie.layout[i] do
@@ -64,6 +63,7 @@ function CraftItem(item,amount,right)
         if right then
             turtle.turnLeft()
         end
+        ClearInventory()
         amount = amount - recepie.output
     end
 end
@@ -91,8 +91,10 @@ end
 function ClearInventory()
     turtle.turnRight()
     for i = 1,16 do
-        turtle.select(i)
-        turtle.drop()
+        if turtle.getItemCount(i) > 0 then
+            turtle.select(i)
+            turtle.drop()
+        end
     end
     turtle.select(1)
     turtle.turnLeft()

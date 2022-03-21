@@ -92,7 +92,7 @@ return {
         blocks = {
             ["c"]="minecraft:cobblestone"
         },
-        output = 1
+        output = 6
     },
     ["minecraft:glass_pane"] = {
         layout = {"   ","ppp","ppp"},
@@ -100,5 +100,14 @@ return {
             ["p"]="minecraft:glass"
         },
         output = 16
+    },
+    ["structurize:plain_spruce_cobblestone_timber_frame"] = {
+        layout = {" p "," c "," s "},
+        blocks = {
+            ["p"]="minecraft:spruce_planks",
+            ["c"]="minecraft:cobblestone",
+            ["s"]="structurize:septergold"
+        },
+        output = 4
     },
 }
