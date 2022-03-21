@@ -110,4 +110,67 @@ return {
         },
         output = 4
     },
+    ["structurize:double_crossed_spruce_cobblestone_timber_frame"] = {
+        layout = {"   "," p ","   "},
+        blocks = {
+            ["p"]="structurize:plain_spruce_cobblestone_timber_frame"
+        },
+        output = 1
+    },
+    ["structurize:framed_spruce_cobblestone_timber_frame"] = {
+        layout = {"   "," p ","   "},
+        blocks = {
+            ["p"]="structurize:double_crossed_spruce_cobblestone_timber_frame"
+        },
+        output = 1
+    },
+    ["structurize:side_framed_spruce_cobblestone_timber_frame"] = {
+        layout = {"   "," p ","   "},
+        blocks = {
+            ["p"]="structurize:framed_spruce_cobblestone_timber_frame"
+        },
+        output = 1
+    },
+    ["structurize:up_gated_spruce_cobblestone_timber_frame"] = {
+        layout = {"   "," p ","   "},
+        blocks = {
+            ["p"]="structurize:side_framed_spruce_cobblestone_timber_frame"
+        },
+        output = 1
+    },
+    ["structurize:down_gated_spruce_cobblestone_timber_frame"] = {
+        layout = {"   "," p ","   "},
+        blocks = {
+            ["p"]="structurize:up_gated_spruce_cobblestone_timber_frame"
+        },
+        output = 1
+    },
+    ["structurize:one_crossed_lr_spruce_cobblestone_timber_frame"] = {
+        layout = {"   "," p ","   "},
+        blocks = {
+            ["p"]="structurize:down_gated_spruce_cobblestone_timber_frame"
+        },
+        output = 1
+    },
+    ["structurize:one_crossed_rl_spruce_cobblestone_timber_frame"] = {
+        layout = {"   "," p ","   "},
+        blocks = {
+            ["p"]="structurize:one_crossed_lr_spruce_cobblestone_timber_frame"
+        },
+        output = 1
+    },
+    ["structurize:horizontal_plain_spruce_cobblestone_timber_frame"] = {
+        layout = {"   "," p ","   "},
+        blocks = {
+            ["p"]="structurize:one_crossed_rl_spruce_cobblestone_timber_frame"
+        },
+        output = 1
+    },
+    ["structurize:side_framed_horizontal_spruce_cobblestone_timber_frame"] = {
+        layout = {"   "," p ","   "},
+        blocks = {
+            ["p"]="structurize:horizontal_plain_spruce_cobblestone_timber_frame"
+        },
+        output = 1
+    },
 }
