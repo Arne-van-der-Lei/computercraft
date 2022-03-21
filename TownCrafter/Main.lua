@@ -22,13 +22,13 @@ function Craft(item, amount)
     if hasItem then 
         return
     end
+     
+    -- recepie = GetRecepieForItem(item)
 
-    recepie = GetRecepieForItem(item)
-
-    if recepie == nil then
-        print("recipie for " .. item .. " does not exist")
-        return
-    end
+    -- if recepie == nil then
+    --    print("recipie for " .. item .. " does not exist")
+    --    return
+    -- end
 end
 
 function GetItemFromChest(item,toSlot,amount)
