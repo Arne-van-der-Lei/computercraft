@@ -2,6 +2,14 @@ local integrator = peripheral.find("colonyIntegrator") -- Finds the peripheral i
 local fc = peripheral.wrap("front")
 local rc = peripheral.wrap("right")
 
+function PrintTable(table)
+    for i,v in pairs(table) do
+        if type(v) == "function" then
+            print(i,v,debug.getinfo(v))
+        end
+    end
+end
+
 if integrator == nil then error("colonyIntegrator not found") end
 
 if not integrator.isInColony then error("Block is not in a colony") end
@@ -17,7 +25,8 @@ for slot, item in pairs(rc.list()) do
 end
 
 for k, v in ipairs(integrator.getWorkOrders()) do
-    print("Work order: " .. k .. v)
+    print("Work order: " .. k)
+    PrintTable(v)
     for index, item in ipairs(integrator.getWorkOrderResources(k)) do
         print(("%i %d x %s"):format(index, item.count, item.name))
     end
