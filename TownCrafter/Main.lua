@@ -38,7 +38,7 @@ function GetItemFromChest(item,toSlot,amount)
                 rc.pushItems(peripheral.getName(fc),slot,amount)
                 return true
             else 
-
+                return false
             end
         end
     end
