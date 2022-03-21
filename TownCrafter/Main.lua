@@ -1,7 +1,6 @@
 local integrator = peripheral.find("colonyIntegrator") -- Finds the peripheral if one is connected
 local fc = peripheral.wrap("front")
 local rc = peripheral.wrap("right")
-local rc = peripheral.wrap(modem.getName())
 local resepys = require("Recepies")
 
 function PrintTable(table)
