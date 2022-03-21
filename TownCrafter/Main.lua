@@ -17,7 +17,7 @@ function PrintTable(table)
     end
 end
 
-PrintTable(peripheral.getNames())
+PrintTable(modem.getNamesRemote())
 
 
 function Craft(item, amount)
