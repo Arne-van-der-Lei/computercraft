@@ -173,4 +173,19 @@ return {
         },
         output = 1
     },
+    ["minecraft:birch_fence_gate"] = {
+        layout = {"   ","sps","sps"},
+        blocks = {
+            ["p"]="minecraft:birch_planks",
+            ["s"]="minecraft:stick"
+        },
+        output = 1
+    },
+    ["minecraft:birch_planks"] = {
+        layout = {"l  ","   ","   "},
+        blocks = {
+            ["l"]="minecraft:birch_log"
+        },
+        output = 4
+    },
 }
