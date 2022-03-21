@@ -1,6 +1,7 @@
 local integrator = peripheral.find("colonyIntegrator") -- Finds the peripheral if one is connected
 local fc = peripheral.wrap("front")
 local rc = peripheral.wrap("right")
+local rc = peripheral.wrap(modem.getName())
 local resepys = require("Recepies")
 
 function PrintTable(table)
@@ -22,13 +23,43 @@ function Craft(item, amount)
     if hasItem then 
         return
     end
-     
-    -- recepie = GetRecepieForItem(item)
 
-    -- if recepie == nil then
-    --    print("recipie for " .. item .. " does not exist")
-    --    return
-    -- end
+    Craft(item,amount)
+end
+
+function CraftItem(item,amount,right)
+    right = right or false
+    recepie = GetRecepieForItem(item)
+
+    if recepie == nil then
+        print("recipie for " .. item .. " does not exist")
+        return
+    end
+    while amount > 0 do
+        for i = 1, 3, 1 do
+            for j = 1, #recepie.layout[i] do
+                local c = str:sub(j,j)
+                item = recepie.blocks[c]
+                if GetItemFromChest(item,(i-1)*4+j,1) == false then
+                    ClearInventory()
+                    Craft(item,1,true)
+                    return
+                end
+            end
+        end
+        turtle.craft()
+
+        if right then
+            turtle.turnRight()
+        end
+
+        turtle.drop()
+
+        if right then
+            turtle.turnLeft()
+        end
+        amount = amount - recepie.output
+    end
 end
 
 function GetItemFromChest(itemName,toSlot,amount)
@@ -40,11 +71,22 @@ function GetItemFromChest(itemName,toSlot,amount)
                     return true
                 end
             else 
-                return false
+                rc.pushItems(modem.getName(),slot,amount,toSlot)
+                return true
             end
         end
     end
     return false
+end
+
+function ClearInventory()
+    turtle.turnRight()
+    for i = 1,16 do
+        turtle.select(i)
+        turtle.drop()
+    end
+    turtle.select(1)
+    turtle.turnLeft()
 end
 
 function GetRecepieForItem(item)
