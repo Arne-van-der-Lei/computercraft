@@ -237,4 +237,11 @@ return {
         },
         output = 6
     },
+    ["minecraft:oak_pressure_plate"] = {
+        layout = {"   ","   "," pp"},
+        blocks = {
+            ["p"]="minecraft:oak_planks"
+        },
+        output = 1
+    },
 }
