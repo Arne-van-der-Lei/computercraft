@@ -228,6 +228,13 @@ return {
         blocks = {
             ["p"]="minecraft:birch_planks"
         },
+        output = 4
+    },
+    ["minecraft:cobblestone_slab"] = {
+        layout = {"   ","   ","ppp"},
+        blocks = {
+            ["p"]="minecraft:cobblestone"
+        },
         output = 6
     },
 }
