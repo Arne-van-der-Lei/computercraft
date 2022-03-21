@@ -223,4 +223,11 @@ return {
         },
         output = 3
     },
+    ["minecraft:birch_stairs"] = {
+        layout = {"p  ","pp ","ppp"},
+        blocks = {
+            ["p"]="minecraft:birch_planks"
+        },
+        output = 6
+    },
 }
