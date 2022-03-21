@@ -106,7 +106,7 @@ return {
         blocks = {
             ["p"]="minecraft:spruce_planks",
             ["c"]="minecraft:cobblestone",
-            ["s"]="structurize:septergold"
+            ["s"]="structurize:sceptergold"
         },
         output = 4
     },
