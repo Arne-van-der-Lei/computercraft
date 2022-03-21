@@ -195,4 +195,25 @@ return {
         },
         output = 2
     },
+    ["minecraft:oak_slab"] = {
+        layout = {"   ","   ","ppp"},
+        blocks = {
+            ["p"]="minecraft:oak_planks"
+        },
+        output = 6
+    },
+    ["minecraft:birch_slab"] = {
+        layout = {"   ","   ","ppp"},
+        blocks = {
+            ["p"]="minecraft:birch_planks"
+        },
+        output = 6
+    },
+    ["minecraft:spruce_button"] = {
+        layout = {"   "," p ","   "},
+        blocks = {
+            ["p"]="minecraft:spruce_planks"
+        },
+        output = 1
+    },
 }
