@@ -10,6 +10,6 @@ function download(url, file)
     f.close()
 end
 
-download(label.."/main.lua","main.lua")
+download(label.."/Main.lua","Main.lua")
 
-shell.run("main.lua")
+shell.run("Main.lua")
