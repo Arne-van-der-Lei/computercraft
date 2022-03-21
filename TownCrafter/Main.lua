@@ -13,6 +13,10 @@ function PrintTable(table)
     end
 end
 
+function craft(item, amount)
+    print(item .. " - " .. amount)
+end
+
 if integrator == nil then error("colonyIntegrator not found") end
 
 if not integrator.isInColony then error("Block is not in a colony") end
@@ -29,5 +33,10 @@ end
 
 for k, v in ipairs(integrator.getWorkOrders()) do
     print("Work order: " .. v.id)
-    PrintTable(integrator.getWorkOrderResources(v.id))
+
+    for index, item in ipairs(integrator.getWorkOrderResources(v.id)) do
+        if item.status == "NEEDED" then
+            craft(item.item,item.needed - item.available)
+        end
+    end
 end
