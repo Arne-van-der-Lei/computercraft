@@ -16,3 +16,6 @@ for slot, item in pairs(rc.list()) do
   print(("%d x %s in slot %d"):format(item.count, item.name, slot))
 end
 
+for k, v in ipairs(integrator.getWorkOrders()) do
+    print(k .. " " .. v)
+end
