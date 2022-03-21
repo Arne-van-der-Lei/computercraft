@@ -40,13 +40,14 @@ function CraftItem(item,amount,right)
         for i = 1, 3, 1 do
             for j = 1, #recepie.layout[i] do
                 local c = recepie.layout[i]:sub(j,j)
-                item = recepie.blocks[c]
-                if item == nil then 
+                itemto = recepie.blocks[c]
+                if itemto == nil then 
                 else
-                    print(item)
-                    if GetItemFromChest(item,(i-1)*4+j,1) == false then
+                    print(itemto)
+                    if GetItemFromChest(itemto,(i-1)*4+j,1) == false then
                         ClearInventory()
-                        CraftItem(item,1,true)
+                        CraftItem(itemto,1,true)
+                        CraftItem(item,amount)
                         return
                     end
                 end
