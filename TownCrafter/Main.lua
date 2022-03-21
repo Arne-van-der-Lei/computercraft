@@ -39,9 +39,9 @@ function CraftItem(item,amount,right)
             for j = 1, #recepie.layout[i] do
                 local c = recepie.layout[i]:sub(j,j)
                 item = recepie.blocks[c]
-                print(item)
                 if item == nil then 
                 else
+                    print(item)
                     if GetItemFromChest(item,(i-1)*4+j,1) == false then
                         ClearInventory()
                         CraftItem(item,1,true)
