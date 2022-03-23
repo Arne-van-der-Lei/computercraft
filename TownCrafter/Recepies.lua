@@ -244,4 +244,20 @@ return {
         },
         output = 1
     },
+    ["minecraft:spruce_fence"] = {
+        layout = {"psp","psp","   "},
+        blocks = {
+            ["p"]="minecraft:spruce_planks",
+            ["s"]="minecraft:stick"
+        },
+        output = 3
+    },
+    ["minecraft:spruce_fence_gate"] = {
+        layout = {"sps","sps","   "},
+        blocks = {
+            ["p"]="minecraft:spruce_planks",
+            ["s"]="minecraft:stick"
+        },
+        output = 1
+    },
 }
